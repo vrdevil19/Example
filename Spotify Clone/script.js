@@ -238,3 +238,27 @@ audioElement.addEventListener("timeupdate", () => {
     const seconds = Math.floor(current % 60).toString().padStart(2, '0');
     currentTimeDisplay.innerText = `${minutes}:${seconds}`;
 });
+audioElement.addEventListener('ended', () => {
+    if (songIndex >= songs.length - 1) {
+        songIndex = 0;
+    } else {
+        songIndex++;
+    }
+
+    audioElement.src = songs[songIndex].filepath;
+    masterSongName.innerText = songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+
+    makeAllPlays();
+    document.getElementById(songIndex).classList.remove('fa-circle-play');
+    document.getElementById(songIndex).classList.add('fa-circle-pause');
+    masterPlay.classList.remove('fa-circle-play');
+    masterPlay.classList.add('fa-circle-pause');
+});
+
+const volumeSlider = document.getElementById('volumeSlider');
+
+volumeSlider.addEventListener('input', () => {
+    audioElement.volume = volumeSlider.value;
+});

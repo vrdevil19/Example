@@ -90,35 +90,44 @@ nav ul li{
 .timestamp{
     margin: 0 25px;
 }
-.bottom{
-    position: sticky;
-    height: 130px; 
-    background-color: black;
-    color: white;
-    bottom: 0;
+.bottom {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+#volumeSlider {
+  width: 100px;
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.icons {
     display: flex;
     justify-content: center;
-    align-items:center;
-    flex-direction: column;
-}
-.icons{
-    margin-top: 20px;
-}
-.icons i{
+    gap: 20px;
     cursor: pointer;
 }
-#myProgressBar{
-    width: 80vw;
-    cursor: pointer;
+#myProgressBar {
+  flex: 1;
+  cursor: pointer;
 }
 .timeDisplay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80vw;
-    color: white;
-    font-size: 14px;
-    margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 30px; 
 }
 
 .timeDisplay span {
@@ -134,12 +143,27 @@ nav ul li{
 .timestamp i{
     cursor: pointer;
 }
-.songInfo{
-    position: absolute;
-    left: 10vw;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
-.songInfo img{
-    opacity: 0;
-    transition: opacity 1s ease-in;
+.songInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-right: 30px; 
+}
+.songInfo img {
+  height: 40px;
+  width: 40px;
+}
+.controlsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
